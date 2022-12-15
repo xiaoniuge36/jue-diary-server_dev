@@ -60,7 +60,7 @@ class BillController extends Controller {
             const monthList = list.filter(item => moment(Number(item.date)).format('YYYY-MM') == date);
             // 然后计算当月总支出
             const totalExpense = monthList.reduce((curr, item) => {
-                if (item.type_id == 1) {
+                if (item.pay_type == 1) {
                     curr += Number(item.amount)
                     return curr;
                 }
@@ -68,7 +68,7 @@ class BillController extends Controller {
             }, 0);
             // 计算当月总收入
             const totalIncome = monthList.reduce((curr, item) => {
-                if (item.type_id == 2) {
+                if (item.pay_type == 2) {
                     curr += Number(item.amount)
                     return curr;
                 }
