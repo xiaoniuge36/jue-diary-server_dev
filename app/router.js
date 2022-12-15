@@ -11,7 +11,7 @@ module.exports = app => {
   router.get('/api/user/test', __jwt, controller.user.test); // 测试
   router.get('/api/user/getUser', __jwt, controller.user.getUserInfo);// 获取用户信息
   router.post('/api/user/editUser', __jwt, controller.user.editUserInfo);// 修改用户信息
-  router.post('/api/upload',  controller.upload.upload); // 上传图片
+  router.post('/api/upload',__jwt , controller.upload.upload); // 上传图片
   router.post('/api/bill/add', __jwt, controller.bill.add); // 添加账单
   router.get('/api/bill/list', __jwt, controller.bill.list); // 获取账单列表
   router.get('/api/bill/detail', __jwt, controller.bill.detail); // 获取账单详情
