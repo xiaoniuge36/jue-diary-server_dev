@@ -288,9 +288,10 @@ class BillController extends Controller {
                     return item;
                 }
             });
+            console.log(_data);
             //总支出
             const total_expense = _data.reduce((arr, cur) => {
-                if (cur.type_id == 1) {
+                if (cur.pay_type == 1) {
                     arr += Number(cur.amount);
                 }
                 return arr;
@@ -298,7 +299,7 @@ class BillController extends Controller {
 
             //总收入
             const total_income = _data.reduce((arr, cur) => {
-                if (cur.type_id == 2) {
+                if (cur.pay_type == 2) {
                     arr += Number(cur.amount);
                 }
                 return arr;
